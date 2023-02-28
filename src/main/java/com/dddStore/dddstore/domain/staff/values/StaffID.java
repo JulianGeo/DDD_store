@@ -13,6 +13,5 @@ public class StaffID extends Identity {
 
     public static StaffID of (String staffID){
         return new StaffID(staffID);
-
     }
 }

@@ -25,7 +25,6 @@ public class DeliveryMan extends Entity<DeliveryManID> {
     }
 
 
-
     public Data data() {
         return data;
     }

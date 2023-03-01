@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class PersonalID implements ValueObject<String> {
 
-    private final String value;
+    private String value;
 
     public PersonalID(String value) {
         this.value = Objects.requireNonNull(value);

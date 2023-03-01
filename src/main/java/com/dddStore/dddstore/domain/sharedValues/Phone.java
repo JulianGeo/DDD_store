@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Phone implements ValueObject<String> {
 
-    private final String value;
+    private String value;
 
     public Phone(String value) {
         this.value = Objects.requireNonNull(value);

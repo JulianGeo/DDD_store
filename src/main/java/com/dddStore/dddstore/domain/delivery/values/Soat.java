@@ -4,17 +4,28 @@ import com.dddStore.dddstore.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Soat implements ValueObject<String> {
+public class Soat implements ValueObject<Soat.Props> {
 
-    private final String value;
+    private ExpirationDate expirationDate;
 
-    public Soat(String value) {
-        this.value = Objects.requireNonNull(value);
+    public Soat(ExpirationDate expirationDate) {
+        this.expirationDate = expirationDate;
     }
 
     @Override
-    public String value() {
-        return value;
+    public Soat.Props value() {
+        return new Soat.Props() {
+            @Override
+            public ExpirationDate expirationDate() {
+                return expirationDate;
+            }
+        };
+    }
+
+
+    public interface Props {
+        ExpirationDate expirationDate();
+
     }
 }
 

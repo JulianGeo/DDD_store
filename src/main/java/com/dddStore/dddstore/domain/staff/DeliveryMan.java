@@ -16,14 +16,14 @@ public class DeliveryMan extends Entity<DeliveryManID> {
     private Data data;
     private Account account;
     private Location currentLocation;
-    private Location destiantionLocation;
+    private Location destinationLocation;
 
     public DeliveryMan(DeliveryManID id, Data data, Account account, Location currentLocation, Location destiantionLocation) {
         super(id);
         this.data = Objects.requireNonNull(data);
         this.account = Objects.requireNonNull(account);
         this.currentLocation = Objects.requireNonNull(currentLocation) ;
-        this.destiantionLocation = Objects.requireNonNull(destiantionLocation);
+        this.destinationLocation = Objects.requireNonNull(destiantionLocation);
     }
 
 

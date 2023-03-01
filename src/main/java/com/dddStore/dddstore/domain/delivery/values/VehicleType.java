@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class VehicleType implements ValueObject<String> {
 
-    private final String value;
+    private String value;
 
     public VehicleType(String value) {
         this.value = Objects.requireNonNull(value);

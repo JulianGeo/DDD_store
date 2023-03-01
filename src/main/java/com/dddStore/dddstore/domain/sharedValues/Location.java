@@ -6,8 +6,8 @@ import java.util.Objects;
 
 public class Location implements ValueObject<Location.Props> {
 
-    private final Address address;
-    private final Coordinates coordinates;
+    private Address address;
+    private Coordinates coordinates;
 
     public Location(Address address, Coordinates coordinates) {
         this.address = Objects.requireNonNull(address);

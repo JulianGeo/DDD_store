@@ -4,4 +4,7 @@ import com.dddStore.dddstore.generic.EventChange;
 
 public class SaleOrderChange extends EventChange {
 
+    public SaleOrderChange(SaleOrder saleOrder){
+
+    }
 }

@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Email implements ValueObject<String> {
 
-    private final String value;
+    private String value;
 
     public Email(String value) {
         this.value = Objects.requireNonNull(value);

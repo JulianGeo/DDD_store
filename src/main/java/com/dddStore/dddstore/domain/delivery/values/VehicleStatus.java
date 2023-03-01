@@ -1,14 +1,14 @@
-package com.dddStore.dddstore.domain.sharedValues;
+package com.dddStore.dddstore.domain.delivery.values;
 
 import com.dddStore.dddstore.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Password implements ValueObject<String> {
+public class VehicleStatus implements ValueObject<String> {
 
     private String value;
 
-    public Password(String value) {
+    public VehicleStatus(String value) {
         this.value = Objects.requireNonNull(value);
     }
 

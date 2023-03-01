@@ -4,16 +4,26 @@ import com.dddStore.dddstore.generic.ValueObject;
 
 import java.util.Objects;
 
-public class MechCertificate implements ValueObject<String> {
+public class MechCertificate implements ValueObject<MechCertificate.Props> {
 
-    private final String value;
+    private ExpirationDate expirationDate;
 
-    public MechCertificate(String value) {
-        this.value = Objects.requireNonNull(value);
+    public MechCertificate(ExpirationDate expirationDate) {
+        this.expirationDate = expirationDate;
     }
 
     @Override
-    public String value() {
-        return value;
+    public MechCertificate.Props value() {
+        return new MechCertificate.Props() {
+            @Override
+            public ExpirationDate expirationDate() {
+                return expirationDate;
+            }
+        };
+    }
+
+    public interface Props {
+        ExpirationDate expirationDate();
+
     }
 }

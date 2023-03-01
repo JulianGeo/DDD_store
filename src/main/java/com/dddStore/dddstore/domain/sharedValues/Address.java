@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Address implements ValueObject<String> {
 
-    private final String value;
+    private String value;
 
     public Address(String value) {
         this.value = Objects.requireNonNull(value);

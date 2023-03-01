@@ -15,7 +15,6 @@ public class SaleOrder extends AggregateRoot<SaleOrderID> {
 
     public SaleOrder(SaleOrderID id) {
         super(id);
-        //Fix this with this as the staff aggregate
-        subscribe(new SaleOrderChange());
+        subscribe(new SaleOrderChange(this));
     }
 }

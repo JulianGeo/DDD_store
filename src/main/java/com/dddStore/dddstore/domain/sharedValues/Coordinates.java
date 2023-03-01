@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Coordinates implements ValueObject<String> {
 
-    private final String value;
+    private String value;
 
     public Coordinates(String value) {
         this.value = Objects.requireNonNull(value);

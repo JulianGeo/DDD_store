@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class User implements ValueObject<String> {
 
-    private final String value;
+    private String value;
 
     public User(String value) {
         this.value = Objects.requireNonNull(value);

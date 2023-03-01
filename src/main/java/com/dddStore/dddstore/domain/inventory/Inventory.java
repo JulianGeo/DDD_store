@@ -10,9 +10,8 @@ import java.util.Map;
 public class Inventory extends AggregateRoot<InventoryID> {
     protected Map<ItemID, Stock> items;
 
-    // correct this word inside inventoryChange
     public Inventory(InventoryID entityID) {
         super(entityID);
-        subscribe(new InventoryChange());
+        subscribe(new InventoryChange(this));
     }
 }

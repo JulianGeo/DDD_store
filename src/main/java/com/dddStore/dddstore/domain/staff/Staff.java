@@ -14,6 +14,7 @@ public class Staff extends AggregateRoot<StaffID> {
     protected List<DeliveryMan> deliveryMen;
     public Staff(StaffID id) {
         super(id);
+        subscribe(new StaffChange(this));
     }
 
     public void hireSalesman(String salesmanID, String name, String personalID, String email, String phone, String user, String password){
@@ -24,7 +25,7 @@ public class Staff extends AggregateRoot<StaffID> {
         Objects.requireNonNull(phone);
         Objects.requireNonNull(user);
         Objects.requireNonNull(password);
-        appendChange(new SalesmanHired(salesmanID, name, personalID, email, phone, user, password));
+        appendChange(new SalesmanHired(salesmanID, name, personalID, email, phone, user, password)).apply();
     }
 
     public void hireDeliveryMan(String deliveryManID, String name, String personalID, String email, String phone, String user, String password, String coordinates, String address) {
@@ -37,6 +38,6 @@ public class Staff extends AggregateRoot<StaffID> {
         Objects.requireNonNull(password);
         Objects.requireNonNull(coordinates);
         Objects.requireNonNull(address);
-        appendChange(new DeliveryManHired(deliveryManID, name, personalID, email, phone, user, password, coordinates, address));
+        appendChange(new DeliveryManHired(deliveryManID, name, personalID, email, phone, user, password, coordinates, address)).apply();
     }
 }

@@ -1,14 +1,14 @@
-package com.dddStore.dddstore.domain.saleOrder.values;
+package com.dddStore.dddstore.domain.delivery.values;
 
 import com.dddStore.dddstore.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Email implements ValueObject<String> {
+public class MechCertificate implements ValueObject<String> {
 
     private final String value;
 
-    public Email(String value) {
+    public MechCertificate(String value) {
         this.value = Objects.requireNonNull(value);
     }
 

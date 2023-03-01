@@ -1,14 +1,14 @@
-package com.dddStore.dddstore.domain.saleOrder.values;
+package com.dddStore.dddstore.domain.delivery.values;
 
 import com.dddStore.dddstore.generic.ValueObject;
 
 import java.util.Objects;
 
-public class PersonalID implements ValueObject<String> {
+public class VehicleType implements ValueObject<String> {
 
     private final String value;
 
-    public PersonalID(String value) {
+    public VehicleType(String value) {
         this.value = Objects.requireNonNull(value);
     }
 
@@ -17,3 +17,4 @@ public class PersonalID implements ValueObject<String> {
         return value;
     }
 }
+

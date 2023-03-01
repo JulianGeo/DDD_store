@@ -1,14 +1,14 @@
-package com.dddStore.dddstore.domain.staff.values;
+package com.dddStore.dddstore.domain.saleOrder.values;
 
 import com.dddStore.dddstore.generic.ValueObject;
 
 import java.util.Objects;
 
-public class User implements ValueObject<String> {
+public class Status implements ValueObject<String> {
 
     private final String value;
 
-    public User(String value) {
+    public Status(String value) {
         this.value = Objects.requireNonNull(value);
     }
 
@@ -17,3 +17,4 @@ public class User implements ValueObject<String> {
         return value;
     }
 }
+

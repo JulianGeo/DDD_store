@@ -1,7 +1,7 @@
 package com.dddStore.dddstore.domain.staff;
 
-import com.dddStore.dddstore.domain.staff.values.Account;
-import com.dddStore.dddstore.domain.staff.values.Data;
+import com.dddStore.dddstore.domain.sharedValues.Account;
+import com.dddStore.dddstore.domain.sharedValues.Data;
 import com.dddStore.dddstore.domain.staff.values.SalesmanID;
 import com.dddStore.dddstore.generic.Entity;
 

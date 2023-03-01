@@ -1,9 +1,10 @@
 package com.dddStore.dddstore.domain.saleOrder;
 
-import com.dddStore.dddstore.domain.saleOrder.values.Account;
+
 import com.dddStore.dddstore.domain.saleOrder.values.ClientID;
-import com.dddStore.dddstore.domain.saleOrder.values.Data;
-import com.dddStore.dddstore.domain.saleOrder.values.Location;
+import com.dddStore.dddstore.domain.sharedValues.Account;
+import com.dddStore.dddstore.domain.sharedValues.Data;
+import com.dddStore.dddstore.domain.sharedValues.Location;
 import com.dddStore.dddstore.generic.Entity;
 
 import java.util.Objects;

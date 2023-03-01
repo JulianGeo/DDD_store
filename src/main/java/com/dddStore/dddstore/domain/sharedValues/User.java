@@ -1,14 +1,14 @@
-package com.dddStore.dddstore.domain.staff.values;
+package com.dddStore.dddstore.domain.sharedValues;
 
 import com.dddStore.dddstore.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Phone implements ValueObject<String> {
+public class User implements ValueObject<String> {
 
     private final String value;
 
-    public Phone(String value) {
+    public User(String value) {
         this.value = Objects.requireNonNull(value);
     }
 

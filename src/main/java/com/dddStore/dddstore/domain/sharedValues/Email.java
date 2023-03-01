@@ -1,14 +1,14 @@
-package com.dddStore.dddstore.domain.saleOrder.values;
+package com.dddStore.dddstore.domain.sharedValues;
 
 import com.dddStore.dddstore.generic.ValueObject;
 
 import java.util.Objects;
 
-public class User implements ValueObject<String> {
+public class Email implements ValueObject<String> {
 
     private final String value;
 
-    public User(String value) {
+    public Email(String value) {
         this.value = Objects.requireNonNull(value);
     }
 

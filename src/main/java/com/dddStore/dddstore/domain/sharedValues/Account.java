@@ -1,22 +1,19 @@
-package com.dddStore.dddstore.domain.staff.values;
+package com.dddStore.dddstore.domain.sharedValues;
 
 import com.dddStore.dddstore.generic.ValueObject;
 
-import java.util.Objects;
-
 public class Account implements ValueObject<Account.Props> {
-
-    private final User user;
-    private final Password password;
+    private User user;
+    private Password password;
 
     public Account(User user, Password password) {
-        this.user = Objects.requireNonNull(user);
-        this.password =Objects.requireNonNull(password);
+        this.user = user;
+        this.password = password;
     }
 
     @Override
-    public Props value() {
-        return new Props() {
+    public Account.Props value() {
+        return new Account.Props() {
             @Override
             public User user() {
                 return user;
@@ -26,11 +23,12 @@ public class Account implements ValueObject<Account.Props> {
             public Password password() {
                 return password;
             }
+
         };
     }
 
     public interface Props {
         User user();
         Password password();
-    }
+}
 }

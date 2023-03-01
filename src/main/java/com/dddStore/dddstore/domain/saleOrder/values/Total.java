@@ -4,15 +4,17 @@ import com.dddStore.dddstore.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Name implements ValueObject<String> {
+public class Total implements ValueObject<Double> {
 
-    private final String value;
+    private final Double value;
 
-    public Name(String value) {
+    public Total(Double value) {
         this.value = Objects.requireNonNull(value);
     }
+
     @Override
-    public String value() {
+    public Double value() {
         return value;
     }
 }
+

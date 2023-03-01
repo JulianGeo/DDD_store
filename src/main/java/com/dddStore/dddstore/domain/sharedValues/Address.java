@@ -1,14 +1,14 @@
-package com.dddStore.dddstore.domain.saleOrder.values;
+package com.dddStore.dddstore.domain.sharedValues;
 
 import com.dddStore.dddstore.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Coordinates implements ValueObject<String> {
+public class Address implements ValueObject<String> {
 
     private final String value;
 
-    public Coordinates(String value) {
+    public Address(String value) {
         this.value = Objects.requireNonNull(value);
     }
 

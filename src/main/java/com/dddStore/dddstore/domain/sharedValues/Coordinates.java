@@ -1,14 +1,14 @@
-package com.dddStore.dddstore.domain.staff.values;
+package com.dddStore.dddstore.domain.sharedValues;
 
 import com.dddStore.dddstore.generic.ValueObject;
 
 import java.util.Objects;
 
-public class PersonalID implements ValueObject<String> {
+public class Coordinates implements ValueObject<String> {
 
     private final String value;
 
-    public PersonalID(String value) {
+    public Coordinates(String value) {
         this.value = Objects.requireNonNull(value);
     }
 

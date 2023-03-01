@@ -1,4 +1,4 @@
-package com.dddStore.dddstore.domain.staff.values;
+package com.dddStore.dddstore.domain.sharedValues;
 
 import com.dddStore.dddstore.generic.ValueObject;
 

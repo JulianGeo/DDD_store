@@ -7,7 +7,7 @@ public class AccountingID extends Identity {
     public AccountingID() {
     }
 
-    public AccountingID(String accountingID) {
+    private AccountingID(String accountingID) {
         super(accountingID);
     }
 

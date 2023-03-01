@@ -8,7 +8,7 @@ public class DeliveryID extends Identity {
     public DeliveryID() {
     }
 
-    public DeliveryID(String deliveryID) {
+    private DeliveryID(String deliveryID) {
         super(deliveryID);
     }
 

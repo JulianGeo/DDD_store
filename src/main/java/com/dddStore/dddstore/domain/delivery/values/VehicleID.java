@@ -7,7 +7,7 @@ public class VehicleID extends Identity {
     public VehicleID() {
     }
 
-    public VehicleID(String vehicleID) {
+    private VehicleID(String vehicleID) {
         super(vehicleID);
     }
 

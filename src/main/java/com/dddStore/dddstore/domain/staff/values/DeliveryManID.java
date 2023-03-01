@@ -7,7 +7,7 @@ public class DeliveryManID extends Identity {
     public DeliveryManID() {
     }
 
-    public DeliveryManID(String deliveryManId) {
+    private DeliveryManID(String deliveryManId) {
         super(deliveryManId);
     }
 

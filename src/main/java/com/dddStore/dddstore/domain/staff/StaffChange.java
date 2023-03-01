@@ -22,7 +22,7 @@ public class StaffChange extends EventChange {
 
         apply((SalesmanHired event) -> {
             Salesman salesman = new Salesman(
-                    new SalesmanID(event.getSalesmanID()),
+                    SalesmanID.of(event.getSalesmanID()),
                     new Data(new PersonalID(event.getPersonalID()), new Name(event.getName()), new Email(event.getEmail()), new Phone(event.getPhone())),
                     new Account(new User(event.getUser()), new Password(event.getPassword()))
             );
@@ -32,7 +32,7 @@ public class StaffChange extends EventChange {
 
         apply((DeliveryManHired event) -> {
             DeliveryMan deliveryMan = new DeliveryMan(
-                    new DeliveryManID(event.getDeliveryManID()),
+                    DeliveryManID.of(event.getDeliveryManID()),
                     new Data(new PersonalID(event.getPersonalID()), new Name(event.getName()), new Email(event.getEmail()), new Phone(event.getPhone())),
                     new Account(new User(event.getUser()), new Password(event.getPassword())),
                     new Location( new Address(event.getAddress()), new Coordinates(event.getCoordinates())),

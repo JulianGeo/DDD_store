@@ -7,7 +7,7 @@ public class DeliveryCalendarID extends Identity {
     public DeliveryCalendarID() {
     }
 
-    public DeliveryCalendarID(String deliveryCalendarID) {
+    private DeliveryCalendarID(String deliveryCalendarID) {
         super(deliveryCalendarID);
     }
 

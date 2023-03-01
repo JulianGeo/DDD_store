@@ -7,7 +7,7 @@ public class ItemID extends Identity {
     public ItemID() {
     }
 
-    public ItemID(String itemID) {
+    private ItemID(String itemID) {
         super(itemID);
     }
 

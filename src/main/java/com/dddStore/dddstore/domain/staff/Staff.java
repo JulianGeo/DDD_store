@@ -1,9 +1,12 @@
 package com.dddStore.dddstore.domain.staff;
 
+import com.dddStore.dddstore.domain.saleOrder.SaleOrder;
+import com.dddStore.dddstore.domain.saleOrder.values.SaleOrderID;
 import com.dddStore.dddstore.domain.staff.events.DeliveryManHired;
 import com.dddStore.dddstore.domain.staff.events.SalesmanHired;
 import com.dddStore.dddstore.domain.staff.values.StaffID;
 import com.dddStore.dddstore.generic.AggregateRoot;
+import com.dddStore.dddstore.generic.DomainEvent;
 
 import java.util.List;
 import java.util.Objects;
@@ -15,6 +18,11 @@ public class Staff extends AggregateRoot<StaffID> {
     public Staff(StaffID id) {
         super(id);
         subscribe(new StaffChange(this));
+    }
+    public static Staff from(StaffID id, List<DomainEvent> events){
+        Staff staff = new Staff(id);
+        events.forEach(event -> staff.applyEvent(event));
+        return staff;
     }
 
     public void hireSalesman(String salesmanID, String name, String personalID, String email, String phone, String user, String password){

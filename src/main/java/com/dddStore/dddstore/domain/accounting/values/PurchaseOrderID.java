@@ -8,7 +8,7 @@ public class PurchaseOrderID extends Identity {
     public PurchaseOrderID() {
     }
 
-    public PurchaseOrderID(String purchaseOrderID) {
+    private PurchaseOrderID(String purchaseOrderID) {
         super(purchaseOrderID);
     }
 

@@ -7,7 +7,7 @@ public class SaleOrderID extends Identity {
     public SaleOrderID() {
     }
 
-    public SaleOrderID(String saleOrderID) {
+    private SaleOrderID(String saleOrderID) {
         super(saleOrderID);
     }
 

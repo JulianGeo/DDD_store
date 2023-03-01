@@ -7,7 +7,7 @@ public class StaffID extends Identity {
     public StaffID() {
     }
 
-    public StaffID(String staffID) {
+    private StaffID(String staffID) {
         super(staffID);
     }
 

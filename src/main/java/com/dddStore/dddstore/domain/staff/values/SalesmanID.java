@@ -6,7 +6,7 @@ public class SalesmanID extends Identity {
     public SalesmanID() {
     }
 
-    public SalesmanID(String salesmanID) {
+    private SalesmanID(String salesmanID) {
         super(salesmanID);
     }
 

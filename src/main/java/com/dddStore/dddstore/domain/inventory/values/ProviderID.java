@@ -7,7 +7,7 @@ public class ProviderID extends Identity {
     public ProviderID() {
     }
 
-    public ProviderID(String providerID) {
+    private ProviderID(String providerID) {
         super(providerID);
     }
 

@@ -32,4 +32,5 @@ public class CreateSaleOrderCommand extends Command {
     public void setSaleOrderID(String saleOrderID) {
         this.saleOrderID = saleOrderID;
     }
+
 }

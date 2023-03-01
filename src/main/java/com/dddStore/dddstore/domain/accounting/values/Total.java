@@ -1,4 +1,4 @@
-package com.dddStore.dddstore.domain.saleOrder.values;
+package com.dddStore.dddstore.domain.accounting.values;
 
 import com.dddStore.dddstore.generic.ValueObject;
 
@@ -17,4 +17,3 @@ public class Total implements ValueObject<Double> {
         return value;
     }
 }
-

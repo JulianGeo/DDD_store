@@ -1,8 +1,9 @@
 package com.dddStore.dddstore.domain.saleOrder.commands;
 
 import com.dddStore.dddstore.domain.saleOrder.values.SaleOrderID;
+import com.dddStore.dddstore.generic.Command;
 
-public class AddItemsCommand {
+public class AddItemsCommand extends Command {
     private String saleOrderID;
     private String itemID;
     private Integer amount;

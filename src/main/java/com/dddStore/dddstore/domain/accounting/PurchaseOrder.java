@@ -4,6 +4,8 @@ import com.dddStore.dddstore.domain.accounting.values.*;
 import com.dddStore.dddstore.domain.inventory.values.InventoryID;
 import com.dddStore.dddstore.domain.inventory.values.ItemID;
 import com.dddStore.dddstore.domain.inventory.values.ProviderID;
+import com.dddStore.dddstore.domain.sharedValues.Amount;
+import com.dddStore.dddstore.domain.sharedValues.Total;
 import com.dddStore.dddstore.generic.Entity;
 
 import java.util.Map;

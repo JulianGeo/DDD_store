@@ -1,4 +1,4 @@
-package com.dddStore.dddstore.domain.accounting.values;
+package com.dddStore.dddstore.domain.sharedValues;
 
 import com.dddStore.dddstore.generic.ValueObject;
 

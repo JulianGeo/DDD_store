@@ -10,6 +10,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class CreateDeliveryOrderCommand extends Command {
 
+    private String deliveryID;
     private String saleOrderID;
     private LocalDate dateD;
 }

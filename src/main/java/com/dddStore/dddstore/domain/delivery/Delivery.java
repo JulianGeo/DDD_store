@@ -7,6 +7,7 @@ import com.dddStore.dddstore.domain.delivery.events.DeliveryOrderCreated;
 import com.dddStore.dddstore.domain.delivery.events.VehicleAdded;
 import com.dddStore.dddstore.domain.delivery.values.DeliveryDate;
 import com.dddStore.dddstore.domain.delivery.values.DeliveryID;
+import com.dddStore.dddstore.domain.inventory.events.InventoryCreated;
 import com.dddStore.dddstore.domain.saleOrder.values.SaleOrderID;
 import com.dddStore.dddstore.domain.staff.values.DeliveryManID;
 import com.dddStore.dddstore.generic.AggregateRoot;
@@ -25,18 +26,13 @@ public class Delivery extends AggregateRoot<DeliveryID> {
     public Delivery(DeliveryID id) {
         super(id);
         subscribe(new DeliveryChange(this));
+        appendChange(new DeliveryOrderCreated()).apply();
     }
 
     public static Delivery from(DeliveryID id, List<DomainEvent> events){
         Delivery delivery = new Delivery(id);
         events.forEach(event -> delivery.applyEvent(event));
         return delivery;
-    }
-
-    public void createDelivery(String saleOrderID, LocalDate dateD){
-        Objects.requireNonNull(saleOrderID);
-        Objects.requireNonNull(dateD);
-        appendChange(new DeliveryOrderCreated(saleOrderID, dateD)).apply();
     }
 
     public void addDeliveryMan(String deliveryManID){

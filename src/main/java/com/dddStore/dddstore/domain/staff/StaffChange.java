@@ -27,7 +27,6 @@ public class StaffChange extends EventChange {
                     new Account(new User(event.getUser()), new Password(event.getPassword()))
             );
             staff.salesmen.add(salesman);
-
         });
 
         apply((DeliveryManHired event) -> {

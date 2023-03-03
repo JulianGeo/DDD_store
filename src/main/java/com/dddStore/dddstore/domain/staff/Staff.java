@@ -4,6 +4,7 @@ import com.dddStore.dddstore.domain.saleOrder.SaleOrder;
 import com.dddStore.dddstore.domain.saleOrder.values.SaleOrderID;
 import com.dddStore.dddstore.domain.staff.events.DeliveryManHired;
 import com.dddStore.dddstore.domain.staff.events.SalesmanHired;
+import com.dddStore.dddstore.domain.staff.events.StaffCreated;
 import com.dddStore.dddstore.domain.staff.values.StaffID;
 import com.dddStore.dddstore.generic.AggregateRoot;
 import com.dddStore.dddstore.generic.DomainEvent;
@@ -18,6 +19,7 @@ public class Staff extends AggregateRoot<StaffID> {
     public Staff(StaffID id) {
         super(id);
         subscribe(new StaffChange(this));
+        appendChange(new StaffCreated()).apply();
     }
     public static Staff from(StaffID id, List<DomainEvent> events){
         Staff staff = new Staff(id);

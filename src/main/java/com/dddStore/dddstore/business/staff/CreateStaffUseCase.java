@@ -23,7 +23,7 @@ public class CreateStaffUseCase implements UseCaseForCommand<CreateStaffCommand>
         // Do i need to add the empty lists of employees here? ... or with the events dynamic is enough?
         // or can i do it with a method inside the same class?
         Staff staff = new Staff(StaffID.of(command.getStaffID()));
-        return staff.getUncommittedChanges().stream().map(event->eventsRepository.saveEvent(event)).collect(Collectors.toList());
+        return staff.getUncommittedChanges().stream().map(event->eventsRepository.saveEvent(event)).toList();
     }
 
 }

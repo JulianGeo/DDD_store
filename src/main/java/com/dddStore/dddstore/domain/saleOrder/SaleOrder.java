@@ -1,6 +1,5 @@
 package com.dddStore.dddstore.domain.saleOrder;
 
-import com.dddStore.dddstore.domain.inventory.Item;
 import com.dddStore.dddstore.domain.inventory.values.ItemID;
 import com.dddStore.dddstore.domain.saleOrder.events.ClientAdded;
 import com.dddStore.dddstore.domain.saleOrder.events.ItemsAdded;
@@ -31,6 +30,7 @@ public class SaleOrder extends AggregateRoot<SaleOrderID> {
     public SaleOrder(SaleOrderID id) {
         super(id);
         subscribe(new SaleOrderChange(this));
+        appendChange(new SaleOrderCreated(id.toString())).apply();
     }
 
     public static SaleOrder from(SaleOrderID id, List<DomainEvent> events){
@@ -41,7 +41,7 @@ public class SaleOrder extends AggregateRoot<SaleOrderID> {
     public void createSaleOrder (String saleOrderID, LocalDate date){
         Objects.requireNonNull(saleOrderID);
         Objects.requireNonNull(date);
-        appendChange(new SaleOrderCreated(saleOrderID, date)).apply();
+        appendChange(new SaleOrderCreated(saleOrderID)).apply();
     }
 
     public void addClient (String clientID, String name, String personalID, String email, String phone, String user, String password, String coordinates, String address){

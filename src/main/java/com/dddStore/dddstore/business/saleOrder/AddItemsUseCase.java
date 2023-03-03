@@ -21,7 +21,7 @@ public class AddItemsUseCase implements UseCaseForCommand<AddItemsCommand> {
     @Override
     public List<DomainEvent> apply(AddItemsCommand command) {
         List<DomainEvent> userEvents =  eventsRepository.findByAggregatedRootId(command.getSaleOrderID());
-        SaleOrder saleOrder=SaleOrder.from(SaleOrderID.of((command.getSaleOrderID())), userEvents);
+        SaleOrder saleOrder=SaleOrder.from(SaleOrderID.of((command.getSaleOrderID())),userEvents);
         saleOrder.addItems(command.getItemID(), command.getAmount());
         return saleOrder.getUncommittedChanges().stream().map(event->eventsRepository.saveEvent(event)).toList();
     }

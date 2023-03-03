@@ -8,13 +8,15 @@ import com.dddStore.dddstore.domain.saleOrder.values.SaleOrderID;
 import com.dddStore.dddstore.domain.staff.values.DeliveryManID;
 import com.dddStore.dddstore.generic.EventChange;
 
+import java.time.LocalDate;
+
 public class DeliveryChange extends EventChange {
     public DeliveryChange(Delivery delivery){
 
         apply((DeliveryOrderCreated event) -> {
-            delivery.deliveryDate = new DeliveryDate(SaleOrderID.of(event.getSaleOrderID()), new DateD(event.getDateD()));
         });
 
+        //This consumer is intended to also add a destination location to the deliveryMan
         apply((DeliveryManAdded event) -> {
             delivery.deliveryManID = DeliveryManID.of(event.getDeliveryManID());
         });
@@ -26,6 +28,8 @@ public class DeliveryChange extends EventChange {
                     new MechCertificate(new ExpirationDate(event.getMechCertExpirationDate())),
                     new VehicleStatus(event.getStatus()));
         });
+
+
 
     }
 }

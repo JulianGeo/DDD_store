@@ -13,4 +13,8 @@ public class CreateDeliveryOrderCommand extends Command {
     private String deliveryID;
     private String saleOrderID;
     private LocalDate dateD;
+
+    public CreateDeliveryOrderCommand(String deliveryID) {
+        this.deliveryID = deliveryID;
+    }
 }

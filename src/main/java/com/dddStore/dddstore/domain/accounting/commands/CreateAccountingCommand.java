@@ -8,4 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreateAccountingCommand extends Command {
     private String accountingID;
+
+    public CreateAccountingCommand(String accountingID) {
+        this.accountingID = accountingID;
+    }
 }

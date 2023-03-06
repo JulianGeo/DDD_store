@@ -1,7 +1,9 @@
-package com.dddStore.dddstore.business.staff;
+package com.dddStore.dddstore.business.delivery;
 
 import com.dddStore.dddstore.business.commons.EventsRepository;
 import com.dddStore.dddstore.business.staff.CreateStaffUseCase;
+import com.dddStore.dddstore.domain.delivery.commands.CreateDeliveryOrderCommand;
+import com.dddStore.dddstore.domain.delivery.events.DeliveryOrderCreated;
 import com.dddStore.dddstore.domain.staff.commands.CreateStaffCommand;
 import com.dddStore.dddstore.domain.staff.events.StaffCreated;
 import com.dddStore.dddstore.generic.DomainEvent;
@@ -19,35 +21,31 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
-class CreateStaffUseCaseTest {
-
+class CreateDeliveryOrderUseCaseTest {
 
     @Mock
     private EventsRepository eventsRepository;
-    private CreateStaffUseCase createStaffUseCase;
+    private CreateDeliveryOrderUseCase createDeliveryOrderUseCase;
 
     @BeforeEach
     void setup(){
-        createStaffUseCase = new CreateStaffUseCase(eventsRepository);
+        createDeliveryOrderUseCase = new CreateDeliveryOrderUseCase(eventsRepository);
     }
 
     @Test
     void successfulScenario(){
 
-        CreateStaffCommand createStaffCommand = new CreateStaffCommand("StafID");
-        StaffCreated staffCreated = new StaffCreated();
-        staffCreated.setAggregateRootId("StafID");//primitive types
-        Mockito.when(eventsRepository.saveEvent(ArgumentMatchers.any(StaffCreated.class)))
+        CreateDeliveryOrderCommand createDeliveryOrderCommand = new CreateDeliveryOrderCommand("DeliveryID");
+        DeliveryOrderCreated deliveryOrderCreated = new DeliveryOrderCreated();
+        deliveryOrderCreated.setAggregateRootId("DeliveryID");//primitive types
+        Mockito.when(eventsRepository.saveEvent(ArgumentMatchers.any(DeliveryOrderCreated.class)))
                 .thenAnswer(invocationOnMock -> {
                     return invocationOnMock.getArgument(0);
                 });
-        List<DomainEvent> domainEventList = createStaffUseCase.apply(createStaffCommand);
+        List<DomainEvent> domainEventList = createDeliveryOrderUseCase.apply(createDeliveryOrderCommand);
 
         Assertions.assertEquals(1,domainEventList.size());
         //Assertions.assertEquals("testId",domainEventList.get(0).aggregateRootId());
 
     }
-
-
-
 }

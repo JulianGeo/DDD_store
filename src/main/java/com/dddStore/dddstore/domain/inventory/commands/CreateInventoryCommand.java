@@ -9,4 +9,8 @@ import lombok.NoArgsConstructor;
 public class CreateInventoryCommand extends Command {
     private String inventoryID;
     private String accountingID;
+
+    public CreateInventoryCommand(String inventoryID) {
+        this.inventoryID = inventoryID;
+    }
 }
